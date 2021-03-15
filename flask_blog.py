@@ -1,8 +1,12 @@
 from flask import Flask, render_template
 from forms import RegistrationForm, LoginForm
+import os
+SECRET_KEY = os.urandom(32)
 app = Flask(__name__)
+app.config['SECRET_KEY'] = SECRET_KEY
 
-app.config['SECRET KEY'] = '212a1dd8a6735ac64a69478289965b92'
+
+
 
 posts = [
     {
